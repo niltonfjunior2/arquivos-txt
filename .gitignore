@@ -1,0 +1,22 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Vercel
+.vercel/
+
+# Test coverage
+coverage/
+
+# Logs & OS files
+*.log
+.DS_Store
+Thumbs.db
+
+# Internal AI & source content directories (local only)
+.ai/
+conteudo/
+
+

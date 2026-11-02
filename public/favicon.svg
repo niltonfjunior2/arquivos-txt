@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="txtBorderGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#14b8a6" />
+      <stop offset="50%" stop-color="#4f46e5" />
+      <stop offset="100%" stop-color="#f59e0b" />
+    </linearGradient>
+  </defs>
+  <!-- Borda Externa com Gradiente (from-teal-500 via-indigo-600 to-amber-500) -->
+  <rect x="0" y="0" width="64" height="64" rx="16" fill="url(#txtBorderGrad)" />
+  <!-- Fundo Interno (#181825) -->
+  <rect x="4" y="4" width="56" height="56" rx="13" fill="#181825" />
+  <!-- Rótulo Monoespaçado TXT -->
+  <text
+    x="32"
+    y="39"
+    text-anchor="middle"
+    fill="#fbbf24"
+    font-family="'Fira Code', 'JetBrains Mono', Consolas, monospace"
+    font-weight="800"
+    font-size="22"
+    letter-spacing="-0.5"
+  >TXT</text>
+</svg>
+

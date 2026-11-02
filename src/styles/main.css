@@ -1,0 +1,209 @@
+/*
+ * Estilos Globais, Tokens Semânticos e Animações — Mobile-First & Alto Contraste
+ * Preserva 100% das classes do Objeto de Aprendizagem JSON e expande tokens para CSV, Posicional e XML.
+ */
+
+body,
+header,
+nav,
+section,
+div,
+pre,
+code,
+textarea,
+table,
+th,
+td {
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.15s ease;
+}
+
+/* Classes Semânticas de Token para o Highlighting (JSON + CSV + Posicional + XML) */
+.token-punct {
+  font-weight: 700;
+  color: #24292f;
+}
+.token-key {
+  font-weight: 700;
+  color: #0550ae;
+}
+.token-string {
+  font-weight: 500;
+  color: #116329;
+}
+.token-number {
+  font-weight: 700;
+  color: #0969da;
+}
+.token-bool {
+  font-weight: 800;
+  color: #b35900;
+}
+.token-null {
+  font-weight: 800;
+  color: #8250df;
+}
+.token-plain {
+  color: #24292f;
+}
+.token-delim {
+  font-weight: 800;
+  color: #be123c;
+  background: rgba(244, 63, 94, 0.12);
+  padding: 0 2px;
+  border-radius: 3px;
+}
+.token-header {
+  font-weight: 800;
+  color: #0f766e;
+}
+
+.dark .token-punct {
+  font-weight: 700;
+  color: #fab387;
+}
+.dark .token-key {
+  font-weight: 600;
+  color: #f9e2af;
+}
+.dark .token-string {
+  font-weight: 500;
+  color: #a6e3a1;
+}
+.dark .token-number {
+  font-weight: 700;
+  color: #89b4fa;
+}
+.dark .token-bool {
+  font-weight: 700;
+  color: #cba6f7;
+}
+.dark .token-null {
+  font-weight: 700;
+  color: #f38ba8;
+}
+.dark .token-plain {
+  color: #cdd6f4;
+}
+.dark .token-delim {
+  font-weight: 800;
+  color: #f38ba8;
+  background: rgba(243, 139, 168, 0.16);
+  padding: 0 2px;
+  border-radius: 3px;
+}
+.dark .token-header {
+  font-weight: 700;
+  color: #94e2d5;
+}
+
+/* Scrollbars adaptáveis com alto contraste */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+.dark ::-webkit-scrollbar-track {
+  background: #181825;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: #45475a;
+  border-radius: 4px;
+}
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #585b70;
+}
+
+html:not(.dark) ::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+html:not(.dark) ::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+html:not(.dark) ::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Highlight de linha ativa do passo a passo */
+.dark .highlight-active-row {
+  background: rgba(137, 180, 250, 0.12);
+  border-left: 3px solid #89b4fa;
+  animation: darkPulseGlow 2.4s infinite ease-in-out;
+}
+@keyframes darkPulseGlow {
+  0%,
+  100% {
+    box-shadow: inset 0 0 10px rgba(137, 180, 250, 0.15);
+  }
+  50% {
+    box-shadow: inset 0 0 18px rgba(137, 180, 250, 0.35);
+  }
+}
+
+html:not(.dark) .highlight-active-row {
+  background: rgba(37, 99, 235, 0.08);
+  border-left: 3px solid #2563eb;
+  animation: lightPulseGlow 2.4s infinite ease-in-out;
+}
+@keyframes lightPulseGlow {
+  0%,
+  100% {
+    box-shadow: inset 0 0 8px rgba(37, 99, 235, 0.1);
+  }
+  50% {
+    box-shadow: inset 0 0 16px rgba(37, 99, 235, 0.22);
+  }
+}
+
+/* Cursor de Digitação */
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+.typing-cursor {
+  display: inline-block;
+  width: 7px;
+  height: 17px;
+  vertical-align: middle;
+  margin-left: 2px;
+  animation: blink 0.8s infinite;
+}
+.dark .typing-cursor {
+  background-color: #89b4fa;
+}
+html:not(.dark) .typing-cursor {
+  background-color: #2563eb;
+}
+
+/* Hover nos nós da árvore */
+.tree-node-item {
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease;
+}
+.tree-node-item:hover {
+  transform: translateX(3px);
+}
+
+/* Drag & Drop Highlight */
+.drop-active {
+  border-color: #6366f1 !important;
+  background-color: rgba(99, 102, 241, 0.1) !important;
+  transform: scale(1.01);
+}
+
+/* Utilitário Mobile-First para esconder barra de rolagem mantendo toque fluido */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

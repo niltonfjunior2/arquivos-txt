@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="pt-BR" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arquivos de Texto na Programação — Laboratório Interativo</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <!-- Google Fonts: Inter & Fira Code -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Tone.js CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.min.js"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              mono: ['"Fira Code"', 'monospace'],
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="stylesheet" href="/src/styles/main.css" />
+  </head>
+  <body
+    class="bg-slate-50 text-slate-800 dark:bg-[#11111b] dark:text-[#cdd6f4] font-sans antialiased min-h-screen flex flex-col"
+  >
+    <div id="app">
+      <!-- App Shell e Módulos (1. CSV, 2. Posicionais, 3. JSON, 4. XML, 5. Conversor) serão implementados nas Sprints -->
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
