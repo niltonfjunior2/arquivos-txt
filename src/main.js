@@ -1,6 +1,6 @@
 /**
- * Ponto de Entrada Principal da Aplicação (Sprint 1)
- * Ordem Canônica Obrigatória: 1. CSV -> 2. Posicionais -> 3. JSON -> 4. XML -> 5. Conversor
+ * Ponto de Entrada Principal da Aplicação (App Shell Global)
+ * Ordem Canônica Obrigatória: 1. CSV -> 2. Posicionais -> 3. JSON -> 4. XML -> 5. Conversor -> 6. Desafio Arquiteto
  */
 import { toggleTheme, loadSavedTheme, onThemeChange } from './core/theme.js';
 import { toggleMute, playTone } from './core/audio.js';
@@ -261,17 +261,18 @@ export function buildAppShellHtml() {
       </div>
 
       <div class="text-xs text-slate-600 dark:text-[#bac2de] space-y-3 leading-relaxed">
-        <p>Esta plataforma unifica o estudo prático de <strong>Formatos de Arquivos de Texto</strong> na ordem pedagógica da disciplina:</p>
+        <p>Esta plataforma unifica o estudo prático de <strong>Formatos de Arquivos de Texto</strong> em uma trilha pedagógica progressiva:</p>
         <ol class="list-decimal pl-5 space-y-1 text-slate-800 dark:text-[#cdd6f4] font-medium">
           <li><strong>Arquivos CSV:</strong> Estrutura tabular, cabeçalho, delimitadores (<code>,</code> vs <code>;</code> no Brasil) e qualificadores de texto (<code>""</code>).</li>
           <li><strong>Arquivos Posicionais (CNAB):</strong> Largura fixa por posição, preenchimento com espaços/zeros e casas decimais implícitas.</li>
           <li><strong>Arquivos JSON:</strong> Objetos <code>{ }</code>, arrays <code>[ ]</code>, pares chave-valor e norma RFC 8259.</li>
           <li><strong>Arquivos XML:</strong> Tags hierárquicas, elemento raiz único, atributos e regras de documento bem formado.</li>
           <li><strong>Conversor em Tempo Real:</strong> O mesmo conjunto de dados traduzido simultaneamente nos 4 formatos.</li>
+          <li><strong>Desafio do Arquiteto (25 Cenários em 5 Fases):</strong> Simulador gamificado de decisão arquitetural com dilemas reais misturados, placar geral e diagnóstico técnico.</li>
         </ol>
         <div class="p-3 bg-indigo-50 border border-indigo-200 dark:bg-[#181825] dark:border-indigo-500/20 rounded-xl text-slate-700 dark:text-[#a6adc8]">
-          <strong class="text-indigo-800 dark:text-indigo-300 block mb-1">Dupla Abordagem em Cada Formato:</strong>
-          Use a <strong>Aba 1 (Construtor Guiado + Laboratório do Erro)</strong> para projeção passo a passo em aula, e a <strong>Aba 2 (Validador de Arquivos)</strong> para que os estudantes testem e auditem seus próprios arquivos.
+          <strong class="text-indigo-800 dark:text-indigo-300 block mb-1">Metodologia Prática em Três Níveis:</strong>
+          Nos módulos 1 a 4, use a <strong>Aba 1 (Construtor Guiado + Laboratório do Erro)</strong> para estudo passo a passo e a <strong>Aba 2 (Validador de Arquivos)</strong> para auditar arquivos reais. Conclua a jornada comparando os formatos no <strong>Módulo 5 (Conversor)</strong> e testando sua tomada de decisão nos 25 cenários do <strong>Módulo 6 (Desafio Arquiteto)</strong>.
         </div>
       </div>
 
@@ -312,7 +313,7 @@ export function buildAppShellHtml() {
             <i class="fa-solid fa-bullseye text-indigo-600 dark:text-indigo-400"></i> O Foco na Educação
           </h4>
           <p>
-            Compreender a anatomia dos arquivos de texto é um alicerce indispensável para a interoperabilidade entre sistemas, integrações financeiras, APIs web e documentos fiscais eletrônicos. O ponto central deste laboratório são os <strong>construtores passo a passo, simuladores de armadilhas sintáticas, validadores de arquivos reais e o tradutor em tempo real</strong> entre <strong>CSV, Posicional (CNAB), JSON e XML</strong> — concentrando 100% da atenção visual na estrutura dos dados.
+            Compreender a anatomia dos arquivos de texto é um alicerce indispensável para a interoperabilidade entre sistemas, integrações financeiras, APIs web e documentos fiscais eletrônicos. O ponto central deste laboratório são os <strong>construtores passo a passo, simuladores de armadilhas sintáticas, validadores de arquivos reais, o tradutor em tempo real e o desafio de decisão arquitetural em 5 fases</strong> entre <strong>CSV, Posicional (CNAB), JSON e XML</strong> — concentrando 100% da atenção visual na estrutura e nos critérios de escolha de cada formato.
           </p>
         </div>
 
@@ -360,6 +361,7 @@ export function buildAppShellHtml() {
             <li><strong>Módulo 03 — Arquivos JSON:</strong> Norma <strong>RFC 8259</strong>, objetos <code>{ }</code>, listas <code>[ ]</code>, pares chave-valor, tipos primitivos e estruturas aninhadas para APIs REST.</li>
             <li><strong>Módulo 04 — Arquivos XML:</strong> Prólogo, elemento raiz único, atributos vs. elementos filhos, entidades especiais (<code>&amp;amp;</code>, <code>&amp;lt;</code>, <code>&amp;gt;</code>), as 6 Regras de XML Bem Formado e aplicações em NF-e/XSD.</li>
             <li><strong>Módulo 05 — Conversor 4 Formatos:</strong> Tradução simultânea em tempo real do mesmo conjunto de dados entre CSV, Posicional, JSON e XML lado a lado, com comparativo de verbosidade em bytes (UTF-8).</li>
+            <li><strong>Módulo 06 — Desafio do Arquiteto de Dados:</strong> Simulador gamificado de tomada de decisão com 25 cenários reais misturados e distribuídos em 5 fases de dificuldade progressiva (<em>Iniciante</em>, <em>Básico</em>, <em>Intermediário</em>, <em>Avançado</em> e <em>Especialista</em>), placar geral unificado, cronômetro opcional e fundamentação técnica detalhada.</li>
           </ul>
         </div>
 
@@ -439,7 +441,7 @@ export function buildAppShellHtml() {
         <div class="p-4 rounded-xl bg-slate-50 dark:bg-[#181825] border border-slate-200 dark:border-[#313244]">
           <h4 class="font-bold text-slate-900 dark:text-white text-sm mb-1.5">4. Isenção de Garantias</h4>
           <p>
-            O sistema é fornecido no estado em que se encontra (<em>"as is"</em>), sem garantias implícitas de adequação a fins comerciais ou disponibilidade ininterrupta. Os validadores e conversores refletem os padrões didáticos e normativos (CSV, Posicional/CNAB, JSON RFC 8259 e XML Bem Formado) elaborados para treinamento conceitual.
+            O sistema é fornecido no estado em que se encontra (<em>"as is"</em>), sem garantias implícitas de adequação a fins comerciais ou disponibilidade ininterrupta. Os validadores, conversores e o simulador de decisão arquitetural refletem os padrões didáticos e normativos (CSV, Posicional/CNAB, JSON RFC 8259 e XML Bem Formado) elaborados para treinamento conceitual e prática analítica.
           </p>
         </div>
       </div>
@@ -476,7 +478,7 @@ export function buildAppShellHtml() {
         <div class="p-4 rounded-xl bg-slate-50 dark:bg-[#181825] border border-slate-200 dark:border-[#313244]">
           <h4 class="font-bold text-slate-900 dark:text-white text-sm mb-1.5">1. Coleta e Tratamento de Dados</h4>
           <p>
-            Esta plataforma é uma aplicação executada <strong>inteiramente no lado do cliente (100% no seu navegador)</strong>. Não solicitamos cadastro, login, e-mail ou quaisquer dados pessoais. Todos os arquivos carregados ou textos digitados nos Validadores e no Conversor (<code>.csv</code>, <code>.txt</code>, <code>.json</code>, <code>.xml</code>) são processados exclusivamente na memória local do seu dispositivo e jamais são enviados para servidores externos.
+            Esta plataforma é uma aplicação executada <strong>inteiramente no lado do cliente (100% no seu navegador)</strong>. Não solicitamos cadastro, login, e-mail ou quaisquer dados pessoais. Todos os arquivos carregados, textos digitados nos Validadores e no Conversor (<code>.csv</code>, <code>.txt</code>, <code>.json</code>, <code>.xml</code>) e a pontuação obtida no Desafio do Arquiteto são processados exclusivamente na memória local do seu dispositivo e jamais são enviados para servidores externos.
           </p>
         </div>
 
