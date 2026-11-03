@@ -1,9 +1,9 @@
 # Laboratório Interativo: Arquivos de Texto na Programação
 
-![Status](https://img.shields.io/badge/Status-Release%20v1.0-10b981?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-Release%20v1.1-10b981?style=for-the-badge)
 ![Acesso](https://img.shields.io/badge/Acesso-100%25%20Aberto%20e%20Gratuito-4f46e5?style=for-the-badge)
 ![Execução](https://img.shields.io/badge/100%25-Client--Side%20(Browser)-0ea5e9?style=for-the-badge)
-![Testes](https://img.shields.io/badge/Testes-22%2F22%20Vitest-22c55e?style=for-the-badge)
+![Testes](https://img.shields.io/badge/Testes-26%2F26%20Vitest-22c55e?style=for-the-badge)
 ![Deploy](https://img.shields.io/badge/Deploy-Vercel%20Ready-000000?style=for-the-badge&logo=vercel)
 
 Objeto de aprendizagem interativo e *mobile-first* desenvolvido para o ensino e aprendizado aberto de **Formatos de Arquivos de Texto na Programação** (`CSV`, `Posicional/CNAB`, `JSON` e `XML`).
@@ -22,9 +22,9 @@ A aplicação traduz visualmente os conceitos, estruturas, regras sintáticas e 
 
 ---
 
-## 🧭 Trilha Didática (Os 5 Módulos)
+## 🧭 Trilha Didática (Os 6 Módulos)
 
-A navegação principal segue rigorosamente a progressão pedagógica da disciplina:
+A navegação principal segue rigorosamente a progressão pedagógica de aprendizado e consolidação:
 
 | Ordem | Módulo | Conceitos-Chave Trabalhados | Visualizador Estrutural & Validador |
 | :---: | :--- | :--- | :--- |
@@ -33,6 +33,7 @@ A navegação principal segue rigorosamente a progressão pedagógica da discipl
 | **3** | **Arquivos JSON** | Norma **RFC 8259**, objetos `{ }`, arrays `[ ]`, pares `"chave": valor`, tipos primitivos (`String`, `Number`, `Boolean`, `null`), aninhamento hierárquico e proibição de vírgula sobrando (*trailing comma*), aspas simples e comentários. | **Árvore Hierárquica de Nós e Tipos** + Validador/Formatador RFC 8259 com cálculo de profundidade e contagem de chaves. |
 | **4** | **Arquivos XML** | Prólogo `<?xml ...?>`, elemento raiz único, atributos entre aspas vs. elementos filhos, elementos vazios (`<ativo/>`), comentários (`<!-- ... -->`), as 5 entidades oficiais (`&amp;`, `&lt;`, `&gt;`, `&quot;`, `&apos;`) e contexto de **NF-e / XSD**. | **Árvore Hierárquica DOM (`<tag>`, `@attr`, texto)** + Validador determinístico das **6 Regras de XML Bem Formado** + Formatador XML. |
 | **5** | **Conversor 4 Formatos** | Tradução simultânea em tempo real do **mesmo conjunto de dados** (Seção 9 da apostila) para **CSV**, **Posicional (24 cols)**, **JSON** e **XML** lado a lado, com cenários de caracteres especiais (`;`, `"`, `&`, `<>`). | **Painel 2x2 Sincronizado** + Termômetro Ao Vivo de Bytes (UTF-8) + Ponte em 1 clique para os Validadores + **Quadro Comparativo (Seção 8)**. |
+| **6** | **Desafio Arquiteto** | Simulador de tomada de decisão arquitetural com **25 cenários reais divididos em 5 fases de dificuldade progressiva** (*Iniciante*, *Básico*, *Intermediário*, *Avançado* e *Especialista*). | **Simulador de 5 Fases (25 Cenários)** + Placar de Equipes + Cronômetro Opcional (`Sem Tempo`, `15s`, `20s`, `30s`) + Diagnóstico Técnico (*Por que é o ideal?* vs. *Por que os outros falham?*). |
 
 ---
 
@@ -47,7 +48,7 @@ arquivos-txt/
 ├── vite.config.js                  # Configuração de build Vite + ambiente Vitest (JSDOM)
 ├── vercel.json                     # Configuração de deploy estático e headers de segurança na Vercel
 ├── src/
-│   ├── main.js                     # App Shell Global, roteamento dos 5 módulos e atalhos de teclado
+│   ├── main.js                     # App Shell Global, roteamento dos 6 módulos e atalhos de teclado
 │   ├── styles/
 │   │   └── main.css                # Estilos globais, scrollbars, animações e regras de impressão
 │   ├── core/
@@ -59,7 +60,8 @@ arquivos-txt/
 │       ├── positional/index.js     # Módulo 2: Régua Posicional, CNAB, 4 Armadilhas e Validador
 │       ├── json/index.js           # Módulo 3: Objeto de Aprendizagem JSON (RFC 8259)
 │       ├── xml/index.js            # Módulo 4: Construtor, Árvore DOM, 4 Armadilhas e Validador XML
-│       └── converter/index.js      # Módulo 5: Tradutor em Tempo Real (4 Formatos) + Comparativo
+│       ├── converter/index.js      # Módulo 5: Tradutor em Tempo Real (4 Formatos) + Comparativo
+│       └── breach/index.js         # Módulo 6: Desafio do Arquiteto (25 Cenários em 5 Fases)
 ├── public/
 │   ├── favicon.svg                 # Ícone vetorial oficial do projeto (TXT)
 │   └── NJ.png                      # Logomarca autoral
@@ -68,7 +70,8 @@ arquivos-txt/
     ├── sprint1.test.js             # Testes de App Shell, Módulo JSON e Módulo CSV
     ├── sprint2.test.js             # Testes do Módulo Posicional (Layouts 49 e 24 cols + CNAB)
     ├── sprint3.test.js             # Testes do Módulo XML (Árvore DOM e 6 Regras de Boa Formação)
-    └── sprint4.test.js             # Testes do Conversor em Tempo Real e Rodapé Institucional
+    ├── sprint4.test.js             # Testes do Conversor em Tempo Real e Rodapé Institucional
+    └── sprint5-breach.test.js      # Testes do Módulo 6 (25 Cenários em 5 Fases de Dificuldade)
 ```
 
 ---

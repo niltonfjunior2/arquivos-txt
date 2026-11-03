@@ -27,8 +27,8 @@ describe('Sprint 1 — App Shell, Módulo JSON Integral e Módulo 1 (CSV)', () =
   });
 
   describe('US-1.1 — App Shell Mobile-First e Ordem Canônica', () => {
-    it('deve apresentar os 5 módulos na ordem estrita: CSV, Posicionais, JSON, XML, Conversor', () => {
-      expect(MODULE_ORDER).toEqual(['csv', 'positional', 'json', 'xml', 'converter']);
+    it('deve apresentar os módulos na ordem estrita: CSV, Posicionais, JSON, XML, Conversor e Desafio Arquiteto', () => {
+      expect(MODULE_ORDER).toEqual(['csv', 'positional', 'json', 'xml', 'converter', 'breach']);
       const navButtons = Array.from(document.querySelectorAll('[id^="nav-format-"]')).map(
         (el) => el.id
       );
@@ -38,6 +38,7 @@ describe('Sprint 1 — App Shell, Módulo JSON Integral e Módulo 1 (CSV)', () =
         'nav-format-json',
         'nav-format-xml',
         'nav-format-converter',
+        'nav-format-breach',
       ]);
     });
 

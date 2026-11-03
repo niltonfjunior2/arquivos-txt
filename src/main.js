@@ -46,6 +46,14 @@ import {
   initConverterModule,
   refreshConverterTheme,
 } from './modules/converter/index.js';
+import {
+  BREACH_MODULE_ID,
+  getBreachModuleHtml,
+  initBreachModule,
+  stopBreachTimer,
+  refreshBreachTheme,
+  handleBreachKeydown,
+} from './modules/breach/index.js';
 
 export const MODULE_ORDER = [
   CSV_MODULE_ID,
@@ -53,6 +61,7 @@ export const MODULE_ORDER = [
   JSON_MODULE_ID,
   XML_MODULE_ID,
   CONVERTER_MODULE_ID,
+  BREACH_MODULE_ID,
 ];
 
 let activeModuleId = CSV_MODULE_ID;
@@ -66,6 +75,7 @@ export function stopAllTypingAnimations() {
   stopPosTyping();
   stopJsonTyping();
   stopXmlTyping();
+  stopBreachTimer();
 }
 
 export function switchFormatModule(moduleId) {
@@ -183,6 +193,12 @@ export function buildAppShellHtml() {
           <i class="fa-solid fa-arrows-spin text-purple-500"></i>
           <span>Conversor 4 Formatos</span>
         </button>
+
+        <button id="nav-format-breach" onclick="switchFormatModule('breach')" class="flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-semibold text-slate-700 dark:text-[#cdd6f4] bg-white hover:bg-slate-100 dark:bg-[#1e1e2e] dark:hover:bg-[#313244] border border-slate-200 dark:border-[#313244] transition shrink-0">
+          <span class="w-5 h-5 rounded-full bg-slate-200 dark:bg-[#313244] flex items-center justify-center font-mono text-[11px]">6</span>
+          <i class="fa-solid fa-shield-halved text-rose-500"></i>
+          <span>Desafio Arquiteto</span>
+        </button>
       </div>
     </div>
   </header>
@@ -194,6 +210,7 @@ export function buildAppShellHtml() {
     ${getJsonModuleHtml()}
     ${getXmlModuleHtml()}
     ${getConverterModuleHtml()}
+    ${getBreachModuleHtml()}
   </div>
 
   <!-- Rodapé Institucional (Footer) -->
@@ -530,6 +547,7 @@ export function initApp() {
     refreshJsonTheme();
     refreshXmlTheme();
     refreshConverterTheme();
+    refreshBreachTheme();
   });
 
   initCsvModule();
@@ -537,6 +555,7 @@ export function initApp() {
   initJsonModule();
   initXmlModule();
   initConverterModule();
+  initBreachModule();
   loadSavedTheme();
 
   window.addEventListener('keydown', (e) => {
@@ -573,6 +592,8 @@ export function initApp() {
         if (e.key === 'ArrowRight') xmlNextStep();
         if (e.key === 'ArrowLeft') xmlPrevStep();
       }
+    } else if (activeModuleId === BREACH_MODULE_ID) {
+      handleBreachKeydown(e);
     }
   });
 }
